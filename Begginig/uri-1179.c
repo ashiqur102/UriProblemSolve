@@ -1,52 +1,78 @@
 #include<stdio.h>
+int par[15],impar[15],n[15],k=0,z=0;
+
+int print_par(int s)
+{
+    int l;
+    if(s<=5)
+    {
+        for(l=0;l<s;l++)
+        {
+            printf("par[%d] = %d\n",l,par[l]);
+        }
+    }
+    return 0;
+}
+
+int print_impar(int s2)
+{
+    int l;
+    if(s2<=5)
+    {
+        for(l=0;l<s2;l++)
+        {
+            printf("impar[%d] = %d\n",l,impar[l]);
+        }
+    }
+
+    return 0;
+}
 
 int main()
 {
-    int even[15],odd[15],input[15];
-    int i,c,t,k=0,l,j,m;
+    int i,j,s=0,s2=0,t,l,m;
 
-    for(m=0;m<15;m++)
-    {
-        scanf("%d",&input[m]);
-    }
-
-    for(i=0;i<15;i++)
-    {
-        if(input[i]%2==0)
-        {
-          even[k]=input[i];
-         /* k++;
-          if(k==4)
-          {
-              for(j=0;j<5;j++)
-              {
-                  printf("par[%d] = %d\n",j,even[j]);
-              }
-              k=0;
-          }*/
-        }
-        else if(input[i]%2!=0)
-        {
-             odd[k]=input[i];
-         /* k++;
-          if(k==4)
-          {
-              for(l=0;l<5;l++)
-              {
-                  printf("par[%d] = %d\n",j,even[j]);
-              }
-              k=0;
-          }
-
-
-        }*/
+   for(i=0;i<15; i++)
+   {
+       scanf("%d",&n[i]);
+   }
+       for(t=0;t<15;t++)
+       {
+           if(n[t]%2==0)
+           {
+               par[s]=n[t];
+               s++;
+               if(s==5)
+               {
+                   print_par(s);
+               }
+           }
+           else
+           {
+               impar[s2]=n[t];
+               s2++;
+               if(s2==5)
+               {
+                print_impar(s2);
+               }
+           }
        }
-    }
-    for(j=0;i<sizeof(even);j++)
-    {
-        printf("par[%d] = %d\n",j,even[j]);
-    }
 
+        z=0;
+      for(l=5;l<s2;l++)
+        {
+
+            printf("impar[%d] = %d\n",z,impar[l]);
+            z++;
+        }
+
+        z=0;
+      for(m=5;m<s;m++)
+        {
+
+            printf("par[%d] = %d\n",z,par[m]);
+            z++;
+        }
 
     return 0;
 
